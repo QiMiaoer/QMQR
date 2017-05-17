@@ -33,6 +33,7 @@
     imageView.center = self.view.center;
     imageView.layer.borderColor = [[UIColor blackColor] CGColor];
     imageView.layer.borderWidth = 1.0;
+    imageView.userInteractionEnabled = YES;
     [self.view addSubview:imageView];
     _imageView = imageView;
     
@@ -40,7 +41,6 @@
     longPress.minimumPressDuration = 0.8;
     longPress.numberOfTouchesRequired = 1;
     [imageView addGestureRecognizer:longPress];
-    imageView.userInteractionEnabled = YES;
     
     UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(20, 100, 200, 30)];
     textField.borderStyle = UITextBorderStyleRoundedRect;
@@ -70,6 +70,7 @@
     
     UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_imageView.frame) + 30, self.view.bounds.size.width, 30)];
     lab.textAlignment = NSTextAlignmentCenter;
+    lab.text = @"长按二维码图片来识别二维码";
     [self.view addSubview:lab];
     _label = lab;
 }
